@@ -6,12 +6,26 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true,
         trim:true,
-        unique:true
+        unique:true,
+        lowercase:true
     },
-    name:{
+    Username:{
         type:String,
         required:true,
-        trim:true
+        trim:true,
+        unique:true,
+        lowercase:true
+    },
+    password:{
+        type:String,
+        required:true,
+        trim:true,
+        minlength:7,
+    },
+    avatar:{
+        type:Buffer
     }
 })
+
+module.exports=userSchema
 

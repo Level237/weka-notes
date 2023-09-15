@@ -12,6 +12,11 @@ const ServerServices=class{
             console.log(`Server is up in port ${port}`);
         })
     }
+
+    addEndpoint(endPoint,router){
+        //middleware calling
+        this.server.use(endPoint,router)
+    }
 }
 
 module.exports=ServerServices
