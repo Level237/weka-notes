@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -14,10 +14,14 @@
     "notes",
     "app"
   ],
-  "author": "Martin balep",
+  "author": "Martin Balep",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Level237/weka-notes/issues"
   },
-  "homepage": "https://github.com/Level237/weka-notes#readme"
+  "homepage": "https://github.com/Level237/weka-notes#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
 }
