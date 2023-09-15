@@ -1,0 +1,23 @@
+{
+  "name": "weka-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Level237/weka-notes.git"
+  },
+  "keywords": [
+    "notes",
+    "app"
+  ],
+  "author": "Martin balep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Level237/weka-notes/issues"
+  },
+  "homepage": "https://github.com/Level237/weka-notes#readme"
+}
