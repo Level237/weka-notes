@@ -1,21 +1,30 @@
 const express=require('express')
-
+const UserRouter=require('../app/routers/api/UserRoute')
 const app=express()
 
 const ServerServices=class{
     constructor(){
-        this.server=app;
+        
+        app.use(express.json())
+        this.addEndpoint()
+        console.log("ss");
     }
 
     start(port){
-        this.server.listen(this.port,function(){
-            console.log(`Server is up in port ${port}`);
+        app.listen(port,function(){
+           console.log("use in port "+port);
         })
+        
+        console.log("done");
     }
 
-    addEndpoint(endPoint,router){
+    addEndpoint(){
         //middleware calling
-        this.server.use(endPoint,router)
+        app.use("/api/v1/users/",UserRouter)
+    }
+
+    getApp(){
+        return app;
     }
 }
 

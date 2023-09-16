@@ -8,9 +8,9 @@ const MongooseService=class{
         this.urlConnection=urlConnection
     }
 
-    connect(){
-        mongoose.connect(this.urlConnection).then(()=>{
-            console.log("DB connection successfull!");
+    async connect(){
+        await mongoose.connect(this.urlConnection).then(function(){
+           
         })
     }
 }

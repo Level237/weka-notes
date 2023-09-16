@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "env-cmd -f config.env nodemon app.js"
+    "dev": "env-cmd -f config.env nodemon app.js",
+    "test": "env-cmd -f test.env jest --watch --runInBand --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
     "env-cmd": "^10.1.0",
     "express": "^4.18.2",
     "mongoose": "^7.5.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
