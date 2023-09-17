@@ -7,7 +7,7 @@ router
 .route("/")
 .get(userController.createUser)
 
-router.get('/level',(req,res)=>{
-    res.send("level")
-})
+router
+.route("/:id")
+.get(userController.getUser)
 module.exports=router

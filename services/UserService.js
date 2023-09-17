@@ -11,6 +11,12 @@ const UserService=class{
             return this.User;
        
     }
+
+    async getUser(id){
+        this.User=User.findById(id)
+
+        return this.User;
+    }
 }
 
 module.exports=UserService

@@ -10,3 +10,5 @@ const userSecond={
     email:"bramslevel@gmail.com",
     password:"level129"
 }
+
+exports.module={userFirst,userSecond}
