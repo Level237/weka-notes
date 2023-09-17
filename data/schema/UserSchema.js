@@ -9,7 +9,7 @@ const userSchema=new mongoose.Schema({
         unique:true,
         lowercase:true
     },
-    Username:{
+    userName:{
         type:String,
         required:true,
         trim:true,

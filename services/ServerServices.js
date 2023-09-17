@@ -7,16 +7,8 @@ const ServerServices=class{
         
         app.use(express.json())
         this.addEndpoint()
-        console.log("ss");
     }
 
-    start(port){
-        app.listen(port,function(){
-           console.log("use in port "+port);
-        })
-        
-        console.log("done");
-    }
 
     addEndpoint(){
         //middleware calling
