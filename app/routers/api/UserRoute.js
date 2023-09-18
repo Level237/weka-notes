@@ -11,4 +11,6 @@ router
 router
 .route("/me")
 .get(auth,userController.getUser)
+.patch(auth,userController.updateUser)
+
 module.exports=router

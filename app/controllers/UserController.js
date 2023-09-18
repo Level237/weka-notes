@@ -1,5 +1,6 @@
 const UserService=require('../../services/UserService')
-
+const isIncludeInBody=require('../../utils/controllers/isIncludeInBody')
+const User=require('../../data/models/User')
 
 exports.createUser=async(req,res)=>{
 
@@ -46,5 +47,23 @@ exports.login=async(req,res)=>{
 }
 
 exports.updateUser=async(req,res)=>{
+    try {
+
+    const userCurrent=req.user;
+    const allowedKeys=["userName","email","password"]
+    const isValidated=isIncludeInBody(allowedKeys,req.body)
+
+    if(!isValidated){
+        res.status(400).send({error:"Invalid Body"})
+    }
+
+
+      const updateUser=await User.updateOne({_id:req.user._id},req.body)
+    
+    
+    res.send(updateUser)
+    } catch (error) {
+        res.status(400).send(error)
+    }
 
 }

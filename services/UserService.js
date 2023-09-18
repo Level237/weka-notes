@@ -1,5 +1,6 @@
 const User=require('../data/models/User')
 const findByCredentials=require('../utils/services/findByCredentials')
+
 const UserService=class{
     constructor(){
         
@@ -32,6 +33,8 @@ const UserService=class{
         return user;
 
     }
+
+    
 }
 
 module.exports=UserService
