@@ -8,7 +8,19 @@ exports.createUser=async(req,res)=>{
         const userSave=await user.createUser(req.body)
         res.status(201).send(userSave)
     } catch (error) {
-        res.status(400).send(error.message)
+        res.status(400).send({error:error.message})
+    }
+}
+
+exports.AllUsers=async(req,res)=>{
+
+    try{
+        const users=new UserService()
+        const allUsers=await users.getAllUser()
+
+        res.status(200).send(allUsers)
+    }catch(error){
+        res.status(500).send(error)
     }
 }
 

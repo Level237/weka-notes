@@ -14,6 +14,11 @@ const UserService=class{
        
     }
 
+    async getAllUser(){
+        const users=User.find({})
+
+        return users
+    }
     async getUser(id){
         this.User=User.findById(id)
 
