@@ -9,6 +9,6 @@ router
 .get(userController.AllUsers)
 
 router
-.route("/:id")
+.route("/me")
 .get(auth,userController.getUser)
 module.exports=router

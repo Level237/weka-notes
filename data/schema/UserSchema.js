@@ -3,7 +3,8 @@ const isEmail=require('../../utils/schema/validators/isEmail')
 const bcryptjs=require('bcryptjs')
 const uniqueValidator=require('mongoose-unique-validator')
 const jwt=require('jsonwebtoken')
-const User=require('../models/User')
+
+
 const userSchema=new mongoose.Schema({
 
     email:{

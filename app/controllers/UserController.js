@@ -27,13 +27,7 @@ exports.AllUsers=async(req,res)=>{
 exports.getUser=async(req,res)=>{
 
     try {
-        const userNew=new UserService()
-        const user=await userNew.getUser(req.params.id)
-
-        if(!user){
-            res.status(404).send("User not found")
-        }
-        res.status(200).send(user)
+        res.status(200).send(req.user)
     } catch (error) {
         res.status(500).send()
     }
