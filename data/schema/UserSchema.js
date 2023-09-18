@@ -2,6 +2,7 @@ const mongoose=require("mongoose")
 const isEmail=require('../../utils/schema/isEmail')
 const bcryptjs=require('bcryptjs')
 const uniqueValidator=require('mongoose-unique-validator')
+const jwt=require('jsonwebtoken')
 const userSchema=new mongoose.Schema({
 
     email:{
@@ -28,22 +29,36 @@ const userSchema=new mongoose.Schema({
         minlength:7,
     },
     token:{
-        type:String
+        type:String,
     },
     avatar:{
         type:Buffer
     }
 })
 
+userSchema.methods.generateAuthToken=async function(){
+    const user=this;
+    const token=jwt.sign({_id:user._id},process.env.JWT_SECRET)
+    user.token=token
+console.log(user);
+    await user.save()
+
+    return token;
+}
+
 userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' });
 userSchema.pre('save',async function(next){
     const user=this;
     if(user.isModified("password")){
         user.password=await bcryptjs.hash(user.password,10)
+        
     }
+    
 
     next()
 })
+
+
 
 module.exports=userSchema
 

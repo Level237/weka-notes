@@ -6,9 +6,11 @@ const UserService=class{
     }
 
     async createUser(userData){
-        this.User=new User(userData)
-        await this.User.save()
-            return this.User;
+        const user=new User(userData)
+       
+        await user.save()
+        await user.generateAuthToken()
+            return user
        
     }
 
