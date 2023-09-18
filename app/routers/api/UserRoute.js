@@ -6,7 +6,7 @@ const router=express.Router()
 router
 .route("/")
 .post(userController.createUser)
-.get(auth,userController.AllUsers)
+.get(userController.AllUsers)
 
 router
 .route("/:id")
