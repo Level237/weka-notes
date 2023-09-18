@@ -40,6 +40,17 @@ exports.getUser=async(req,res)=>{
    
 }
 
+exports.login=async(req,res)=>{
+    try {
+        const user=new UserService()
+        const userAuth=await user.login(req.body.email,req.body.password)
+
+        res.send(userAuth)
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
 exports.updateUser=async(req,res)=>{
 
 }

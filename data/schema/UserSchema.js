@@ -1,8 +1,9 @@
 const mongoose=require("mongoose")
-const isEmail=require('../../utils/schema/isEmail')
+const isEmail=require('../../utils/schema/validators/isEmail')
 const bcryptjs=require('bcryptjs')
 const uniqueValidator=require('mongoose-unique-validator')
 const jwt=require('jsonwebtoken')
+const User=require('../models/User')
 const userSchema=new mongoose.Schema({
 
     email:{
@@ -57,6 +58,8 @@ userSchema.pre('save',async function(next){
 
     next()
 })
+
+
 
 
 

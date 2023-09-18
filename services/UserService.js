@@ -1,5 +1,5 @@
 const User=require('../data/models/User')
-
+const findByCredentials=require('../utils/services/findByCredentials')
 const UserService=class{
     constructor(){
         
@@ -23,6 +23,14 @@ const UserService=class{
         this.User=User.findById(id)
 
         return this.User;
+    }
+
+    async login(email,password){
+        const user=await findByCredentials(email,password)
+        await user.generateAuthToken()
+
+        return user;
+
     }
 }
 
