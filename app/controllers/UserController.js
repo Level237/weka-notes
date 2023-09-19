@@ -49,7 +49,6 @@ exports.login=async(req,res)=>{
 exports.updateUser=async(req,res)=>{
     try {
 
-    const userCurrent=req.user;
     const allowedKeys=["userName","email","password"]
     const isValidated=isIncludeInBody(allowedKeys,req.body)
 
@@ -65,5 +64,10 @@ exports.updateUser=async(req,res)=>{
     } catch (error) {
         res.status(400).send(error)
     }
+
+}
+
+
+exports.deleteAccount=async()=>{
 
 }

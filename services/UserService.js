@@ -34,6 +34,9 @@ const UserService=class{
 
     }
 
+    async deleteAccount(){
+        
+    }
     
 }
 

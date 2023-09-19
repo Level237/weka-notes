@@ -12,5 +12,6 @@ router
 .route("/me")
 .get(auth,userController.getUser)
 .patch(auth,userController.updateUser)
+.delete(auth,userController.deleteAccount)
 
 module.exports=router
