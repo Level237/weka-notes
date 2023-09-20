@@ -67,6 +67,17 @@ exports.updateUser=async(req,res)=>{
 
 }
 
+exports.logout=async(req,res)=>{
+    try {
+        
+        req.user.token=undefined
+        await req.user.save()
+        res.send()
+       
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
 
 exports.deleteAccount=async()=>{
 

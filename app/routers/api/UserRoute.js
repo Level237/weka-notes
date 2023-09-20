@@ -14,4 +14,8 @@ router
 .patch(auth,userController.updateUser)
 .delete(auth,userController.deleteAccount)
 
+router
+.route("/logout")
+.post(auth,userController.logout)
+
 module.exports=router
