@@ -8,9 +8,9 @@ await User.deleteMany();
 
 describe('New Account',()=>{
     it("must create Account User",async()=>{
-        await request(app).get('/api/v1/users/').send({
+        await request(app).post('/api/v1/users/').send({
             userName:"martin",
-            email:"bramslevel129@gmail.com",
+            email:"bramslevel1@gmail.com",
             password:"level129"
         }).expect(201)
     })

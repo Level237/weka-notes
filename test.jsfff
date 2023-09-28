@@ -1,0 +1,46 @@
+/*const level={
+    name:"martin",
+    age:23,
+    live:10
+}
+
+const test=[
+    "name",
+    "age",
+    "sexe",
+]
+  
+
+
+const updates=Object.keys(level)
+
+const isValidated=updates.every((key)=>test.includes(key))
+
+console.log(isValidated);*/
+
+const array=[1,2,2,6,6,3,2,5,5]
+const uniqueArray=[...new Set(array)]
+
+console.log(uniqueArray);
+
+// ❌ Bad
+
+// Creating new User
+router.get("/users/new",(req,res)=>{})
+
+// Creating new User
+router.get("/users/new",(req,res)=>{})
+
+//✅ Good
+
+// Pluralized nouns for resources
+router.get("/posts",(req,res)=>{})
+
+router.get("/posts/:id",(req,res)=>{})
+
+//Use forward slash (/) to indicate hierachical relationship
+router.get("/posts/:id/user",(req,res)=>{})
+
+//Easier to read
+router.get("/store-inventory",(req,res)=>{})
+
