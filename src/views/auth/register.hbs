@@ -8,23 +8,27 @@
 </head>
 <body>
     <div class="container">
-        <h2>Inscription</h2>
+        <form action="/register" method="post">
+
+            <h2>Inscription</h2>
         <div class="form-control">
             <label for="email">Name</label>
-            <input type="text" placeholder="Enter your Name...">
+            <input type="text" name="name" placeholder="Enter your Name...">
         </div>
         <div class="form-control">
             <label for="email">Email</label>
-            <input type="text" placeholder="Enter your Email...">
+            <input type="text" name="password" placeholder="Enter your Email...">
         </div>
         <div class="form-control">
             <label for="email">Password</label>
-            <input onchange="Value" type="password" placeholder="Enter your Password">
+            <input onchange="Value" name="password" type="password" placeholder="Enter your Password">
         </div>
 
-        <button class="btn" id="register-btn" type="submit">Register</button>
+        <button type="submit" class="btn" id="register-btn">Register</button>
+        </form>
+        
     <p style="text-align: center;">Or</p>
-    <p style="text-align: center;"><a href="/" >Sign in</a></p>
+    <p style="text-align: center;"><a href="/login" >Sign in</a></p>
     </div>
     <script src="./js/login.js"></script>
 </body>

@@ -1,4 +1,4 @@
-const NoteService=require('../../services/NoteService')
+const NoteService=require('../../../services/NoteService')
 
 
 exports.createNote=async(req,res)=>{

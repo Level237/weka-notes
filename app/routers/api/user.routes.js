@@ -1,5 +1,5 @@
 const express=require('express')
-const userController=require('../../controllers/UserController')
+const userController=require('../../controllers/api/UserController')
 const auth=require('../../middlewares/auth')
 const router=express.Router()
 

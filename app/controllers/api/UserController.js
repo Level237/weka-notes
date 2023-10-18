@@ -1,6 +1,6 @@
-const UserService=require('../../services/UserService')
-const isIncludeInBody=require('../../utils/controllers/isIncludeInBody')
-const User=require('../../data/models/User')
+const UserService=require('../../../services/UserService')
+const isIncludeInBody=require('../../../utils/controllers/isIncludeInBody')
+const User=require('../../../data/models/User')
 
 exports.createUser=async(req,res)=>{
 
